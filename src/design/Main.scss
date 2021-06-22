@@ -1,0 +1,10 @@
+.main {
+  height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+  padding: 50px 25px;
+  gap: 50px;
+  .form {
+    align-self: center;
+  }
+}
