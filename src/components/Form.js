@@ -18,7 +18,7 @@ const Form = props => {
       });
       props.afterSubmit(response.headers, response.data);
       let data = { method: option, url: url };
-      localStorage.setItem('history', JSON.stringify(data));
+      // localStorage.setItem('history', JSON.stringify(data));
       props.historyData(data);
     } catch (err) {
       props.afterSubmit({ err: err.message }, { err: err.message });

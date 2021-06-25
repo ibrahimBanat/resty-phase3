@@ -11,8 +11,11 @@ const List = props => {
     : (color = '#FF0000');
   return (
     <div className='List'>
-      props.listData.forEach(element =>{' '}
+      {/* props.listData.forEach(element =>{' '} */}
       {/* <button type='disabled'>{element.method}</button>) */}
+      {props.listData.forEach(element => {
+        <div class=''>{element}</div>;
+      })}
     </div>
   );
 };
