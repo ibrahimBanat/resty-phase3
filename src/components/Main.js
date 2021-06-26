@@ -4,6 +4,8 @@ import Result from './Result';
 import '../design/Main.scss';
 import List from './List';
 import { If } from './IF';
+import { Switch, Route } from 'react-router-dom';
+import Help from './Help';
 
 const Main = () => {
   const [count, setCount] = useState('');
@@ -36,11 +38,35 @@ const Main = () => {
   );
 
   return (
-    <div className='main'>
-      <List afterSubmit={sendToResult} setShow={showMe} setLoading={Loading} />
-      <Form afterSubmit={sendToResult} setLoading={Loading} setShow={showMe} />
-      <If condition={show}>{comp}</If>
-    </div>
+    <Switch>
+      <div className='main'>
+        <Route path='/' exact>
+          <List
+            afterSubmit={sendToResult}
+            setShow={showMe}
+            setLoading={Loading}
+          />
+          <Form
+            afterSubmit={sendToResult}
+            setLoading={Loading}
+            setShow={showMe}
+          />
+          <If condition={show}>{comp}</If>
+        </Route>
+
+        <Route path='/history'>
+          <List
+            afterSubmit={sendToResult}
+            setShow={showMe}
+            setLoading={Loading}
+          />
+          <If condition={show}>{comp}</If>
+        </Route>
+        <Route path='/help'>
+          <Help />
+        </Route>
+      </div>
+    </Switch>
   );
 };
 
