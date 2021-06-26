@@ -37,7 +37,7 @@ const Main = () => {
 
   return (
     <div className='main'>
-      <List />
+      <List afterSubmit={sendToResult} setShow={showMe} setLoading={Loading} />
       <Form afterSubmit={sendToResult} setLoading={Loading} setShow={showMe} />
       <If condition={show}>{comp}</If>
     </div>
